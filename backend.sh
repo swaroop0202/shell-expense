@@ -53,6 +53,7 @@ VALIDATE $? "change directory"
 unzip /tmp/backend.zip
 VALIDATE $? "unzipping the code"
 
+cd app
 npm install
 VALIDATE $? "downloading the dependencies"
 
