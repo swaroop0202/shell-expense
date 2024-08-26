@@ -4,6 +4,8 @@ USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
+echo "please enter root password"
+read  "passwrd"
 
 if [ $USERID -ne 0 ]
     then 
@@ -31,5 +33,5 @@ VALIDATE $? "enabling mysql"
 systemctl start mysqld
 VALIDATE $? "starting mysql"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1
+mysql_secure_installation --set-root-pass $passwrd
 VALIDATE $? "setting the root password"
