@@ -24,7 +24,7 @@ if [ $1 -ne 0 ]
         echo -e "$2...$R failure $W"
         exit1
     else
-        echo "$2.. $R success"
+        echo -e "$2.. $R success"
 fi
 }
 
