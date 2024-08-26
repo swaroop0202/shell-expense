@@ -5,7 +5,7 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 R=\e[31m
-G=\e[32m
+G="\e[32m"
 W=\e[37m
 
 echo "please enter root password"
@@ -24,7 +24,7 @@ if [ $1 -ne 0 ]
         echo -e "$2...$R failure $W"
         exit1
     else
-        echo -e "$2.. $R success"
+        echo -e "$2... $G success $W"
 fi
 }
 
