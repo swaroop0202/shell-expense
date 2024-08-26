@@ -6,7 +6,7 @@ SCRIPT_NAME=$(echo $0)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 R=\e[31m
 G="\e[32m"
-W=\e[37m
+W="\e[37m"
 
 echo "please enter root password"
 read  "passwrd"
