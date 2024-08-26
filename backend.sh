@@ -41,7 +41,7 @@ if [ $? -eq 0 ]
         echo "expense user created"
 
 
-mkdir -p /app
+mkdir -p app
 VALIDATE $? "creating a directory"
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
@@ -53,7 +53,6 @@ VALIDATE $? "change directory"
 unzip /tmp/backend.zip
 VALIDATE $? "unzipping the code"
 
-cd /app
 npm install
 VALIDATE $? "downloading the dependencies"
 
