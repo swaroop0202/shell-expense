@@ -39,7 +39,7 @@ if [ $? -eq 0 ]
     else
         useradd expense
         echo "expense user created"
-
+fi
 
 mkdir -p app
 VALIDATE $? "creating a directory"
