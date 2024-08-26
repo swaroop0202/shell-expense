@@ -57,11 +57,16 @@ npm install
 VALIDATE $? "downloading the dependencies"
 
 cp /home/ec2-user/shell-expense/backend.service  /etc/systemd/system/backend.service
+VALIDATE $? "copied backend service "
 
 systemctl daemon-reload
+VALIDATE $? "reloaded"
 
 systemctl enable backend
+VALIDATE $? "enabled"
 
 dnf install mysql -y
+VALIDATE $? "installed mysql client" 
 
 mysql -h 172.31.86.13 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+VALIDATE $? "loading the schema"
