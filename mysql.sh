@@ -28,14 +28,14 @@ if [ $1 -ne 0 ]
 fi
 }
 
-dnf install mysql-server -y
+dnf install mysql-server -y &>>$LOGFILE
 VALIDATE $? "installing mysql server"
 
-systemctl enable mysqld
+systemctl enable mysqld &>>$LOGFILE
 VALIDATE $? "enabling mysql"
 
-systemctl start mysqld
+systemctl start mysqld &>>$LOGFILE
 VALIDATE $? "starting mysql"
 
-mysql_secure_installation --set-root-pass $passwrd
+mysql_secure_installation --set-root-pass $passwrd &>>$LOGFILE
 VALIDATE $? "setting the root password"
