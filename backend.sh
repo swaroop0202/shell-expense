@@ -33,12 +33,12 @@ dnf install nodejs -y
 VALIDATE $? "installing nodejs"
 
 id expense
-if [ $? -ne 0 ]
+if [ $? -eq 0 ]
     then
-        useradd expense
-        echo "creating user expense"
+        echo "user expense is there "
     else
-        echo "expense user is already there"
+        useradd expense
+        echo "expense user created"
 
 
 mkdir -p /app
