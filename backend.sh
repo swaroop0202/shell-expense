@@ -32,8 +32,14 @@ VALIDATE $? "enabling nodejs20"
 dnf install nodejs -y
 VALIDATE $? "installing nodejs"
 
-useradd expense
-VALIDATE $? "adding user"
+id expense
+if [ $? -ne 0 ]
+    then
+        useradd expense
+        echo "creating user expense"
+    else
+        echo "expense user is already there"
+
 
 mkdir -p /app
 VALIDATE $? "creating a directory"
