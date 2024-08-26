@@ -51,6 +51,8 @@ cd /app
 npm install
 VALIDATE $? "downloading the dependencies"
 
+cp /home/ec2-user/shell-expense/backend.service  /etc/systemd/system/backend.service
+
 systemctl daemon-reload
 
 systemctl enable backend
